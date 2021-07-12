@@ -35,3 +35,20 @@ ps-ambassador
 ###To create a superuser within Docker
 
     python manage.py createsuperuser --email a@a.com
+
+###To run the database
+
+    docker-compose up -d db
+    docker-compose up -d backend
+
+###Then to complete process of running the database within the Docker Containers
+
+    docker-compose exec backend sh
+####or
+
+    docker-compose exec db sh
+
+####Then run Migration within Docker container
+    
+    python manage.py migrate
+    
